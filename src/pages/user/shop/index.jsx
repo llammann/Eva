@@ -173,7 +173,7 @@ function Shop() {
                             className="heart"
                             onClick={() => handleWish(x)}
                           >
-                            {MyWishlist.find((wish) => wish.id === x.id) ? (
+                            {MyWishlist && MyWishlist.find((wish) => wish.id === x.id) ? (
                               <HeartFilled />
                             ) : (
                               <HeartOutlined />
