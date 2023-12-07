@@ -1,0 +1,120 @@
+.login {
+  position: relative;
+  font-family: "Roboto", sans-serif;
+  background-image: url("	https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2022/10/Banner.jpg");
+  background-color: rgb(255, 255, 255);
+  padding: 150px 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.login .top .text {
+  display: flex;
+  border-bottom: 1px solid #ebebeb;
+  padding: 15px 0;
+}
+.login .top .text a {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #252525;
+  margin-right: 28px;
+  position: relative;
+  text-decoration: none;
+}
+.login .top .text a::after {
+  position: absolute;
+  right: -18px;
+  top: 0px;
+  content: ">";
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  color: #b2b2b2;
+}
+.login .top .text span {
+  display: inline-block;
+  color: #b2b2b2;
+}
+.login .login-section .container {
+  display: flex;
+  justify-content: center;
+}
+.login .login-section .container .login-form {
+  margin-top: 3%;
+  width: 43%;
+  z-index: 10;
+}
+.login .login-section .container .login-form h2 {
+  color: #252525;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 35px;
+}
+.login .login-section .container .login-form .input {
+  text-align: left;
+  margin-bottom: 25px;
+}
+.login .login-section .container .login-form .input label {
+  display: block;
+  font-size: 18px;
+  color: #252525;
+  margin-bottom: 13px;
+}
+.login .login-section .container .login-form .input input {
+  border: 1px solid #73a849;
+  height: 50px;
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 15px;
+  background-color: transparent;
+}
+.login .login-section .container .login-form .input .inputpassword {
+  border: 1px solid #73a849;
+  height: 50px;
+  width: 100%;
+  padding-right: 15px;
+}
+.login .login-section .container .login-form .input .password {
+  font-size: 17px;
+  width: 90%;
+  height: 100%;
+  background-color: transparent;
+  outline: none;
+  border: hidden;
+}
+.login .login-section .container .login-form .input span {
+  margin-left: 21px;
+}
+.login .login-section .container .login-form button {
+  color: #ffffff;
+  background: #73a849;
+  border: 1px solid #73a849;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 13px 45px 11px;
+  cursor: pointer;
+  width: 100%;
+  letter-spacing: 2px;
+  margin-top: 5px;
+}
+.login .switch-login {
+  text-align: center;
+  margin-top: 22px;
+}
+.login .switch-login a {
+  color: #252525;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+}
+.login .switch-login a::before {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background: #9f9f9f;
+  content: "";
+}/*# sourceMappingURL=Login.css.map */

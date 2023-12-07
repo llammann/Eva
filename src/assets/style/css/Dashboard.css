@@ -1,0 +1,11 @@
+.Container {
+  width: 1320px;
+  margin: auto;
+}
+.Container .adminPanel {
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}/*# sourceMappingURL=Dashboard.css.map */

@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.contactUs {
+  width: 100%;
+  height: 500px;
+  padding: 150px 0;
+  background-image: url("https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2022/10/Contact-Banner.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contactUs h1 {
+  color: #2C541D;
+  font-size: 70px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 8.5px;
+  font-weight: 600;
+  font-family: "Jost", sans-serif;
+}
+
+.contact {
+  padding: 120px 0;
+  width: 100%;
+}
+.contact .container {
+  width: 1140px;
+  margin: auto;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+.contact .container .left {
+  width: 50%;
+}
+.contact .container .left h1 {
+  font-size: 37px;
+  font-weight: 600;
+  font-family: "Jost", sans-serif;
+  padding-bottom: 50px;
+}
+.contact .container .left form {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+}
+.contact .container .left form input {
+  padding: 14px;
+  width: 100%;
+  margin-bottom: 15px;
+  border: 1px solid rgb(233, 225, 225);
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  font-size: 1rem;
+  line-height: 1.7em;
+}
+.contact .container .left form .message {
+  padding: 10px 40px 70px 7px;
+}
+.contact .container .left form button {
+  font-weight: 400;
+  text-align: center;
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: white;
+  padding: 13px 20px;
+  background-color: #74a84a;
+  border: none;
+}
+.contact .container .right {
+  width: 50%;
+  padding: 0 10px 10px 70px;
+}
+.contact .container .right h1 {
+  font-size: 37px;
+  font-weight: 600;
+  font-family: "Jost", sans-serif;
+  padding-bottom: 50px;
+}
+.contact .container .right ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.contact .container .right ul li {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  margin-bottom: 50px;
+}
+.contact .container .right ul li .icon {
+  width: 42px;
+  height: 42px;
+  padding: 6px;
+  border-radius: 50%;
+  border: 1px solid #74A84A;
+  margin-right: 15px;
+}
+.contact .container .right ul li .icon img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  padding: 4px;
+  width: 100%;
+  height: 100%;
+}
+.contact .container .right ul li div span {
+  line-height: 1.4;
+  color: #585858;
+  font-family: "Jost", sans-serif;
+  font-family: roboto, Sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+.contact .container .right ul li div .Phone {
+  font-size: 20px;
+}
+.contact .container .right ul li div .Place {
+  font-size: 25px;
+  width: 50px;
+}
+.contact .container .right ul li div p {
+  color: #2C541D;
+  font-family: jost, Sans-serif;
+  line-height: 1.4em;
+  font-size: 17px;
+}
+.contact .container .right .followUs {
+  padding-left: 60px;
+}
+.contact .container .right .followUs p {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.25em;
+  font-family: "Jost", sans-serif;
+  padding-bottom: 20px;
+}
+.contact .container .right .followUs .follow {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+}
+.contact .container .right .followUs .follow span {
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  background-color: #74A84A;
+  border-radius: 50%;
+  padding: 5px;
+  margin-right: 10px;
+}/*# sourceMappingURL=Contact.css.map */

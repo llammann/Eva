@@ -1,0 +1,102 @@
+.checkout {
+  width: 100%;
+  padding: 7em 0 0 0;
+  .container {
+    padding: 5em 0 0 0;
+    max-width: 80%;
+    width: 1160px;
+    margin: auto;
+
+    .main {
+      .coupon {
+        .line {
+          border: 1px solid #73a849;
+        }
+        .click {
+          background-color: #f7f6f7;
+          height: 50px;
+        }
+      }
+      .leftRight {
+        display: flex;
+        .left {
+          width: 60%;
+
+          .names {
+            display: flex;
+            line-height: 2;
+            font-weight: 700;
+            font-size: 0.9rem;
+            gap: 50px;
+            input {
+              height: 45px;
+              width: 310px;
+            }
+          }
+          .com {
+            input {
+              height: 45px;
+              width: 672px;
+            }
+          }
+          .country {
+            input {
+              height: 45px;
+              width: 672px;
+            }
+          }
+          .street {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+
+            input {
+              height: 45px;
+              width: 672px;
+            }
+          }
+          .town {
+            input {
+              height: 45px;
+              width: 672px;
+            }
+          }
+          .state {
+            input {
+              height: 45px;
+              width: 672px;
+            }
+          }
+          .phone {
+            input {
+              height: 45px;
+              width: 672px;
+            }
+          }
+          .email {
+            input {
+              height: 45px;
+              width: 672px;
+            }
+          }
+        }
+        .rightInp {
+          width: 40%;
+          border: 1px solid #d9d9d9;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}
+.placeOrder {
+  width: 430px;
+  background-color: #74a84a;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fbfbfb;
+  border: none;
+  height: 40px;
+}

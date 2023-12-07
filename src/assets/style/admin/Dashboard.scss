@@ -1,0 +1,11 @@
+.Container {
+  width: 1320px;
+  margin: auto;
+  .adminPanel {
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

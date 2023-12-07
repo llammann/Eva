@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.firstTable {
+  margin: 150px 0 0 0;
+}
+.firstTable .container {
+  width: 1140px;
+  margin: auto;
+}
+
+.secondTable {
+  padding: 50px;
+}
+.secondTable .container {
+  width: 1140px;
+  margin: auto;
+  display: flex;
+  align-items: start;
+  justify-content: end;
+}
+.secondTable .container .subTotal {
+  width: 590px;
+  height: 300px;
+  border: 1px solid #d9d9d9;
+}
+.secondTable .container .subTotal .cartTotals h5 {
+  padding-left: 20px;
+  display: flex;
+  margin-top: 10px;
+  align-items: center;
+}
+.secondTable .container .subTotal p {
+  margin: 20px;
+  padding-left: 20px;
+}
+.secondTable .container .subTotal button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #74a84a;
+  width: 90%;
+  height: 70px;
+  border: none;
+  color: #fbfbfb;
+  align-items: center;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+.cartTable .tableInpBtn {
+  display: flex;
+  padding: 10px 30px;
+  gap: 30px;
+}
+.cartTable .tableInpBtn .Inp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.cartTable .tableInpBtn button {
+  background-color: #74a84a;
+  color: #fbfbfb;
+  width: 200px;
+  height: 50px;
+  border: none;
+}/*# sourceMappingURL=Basket.css.map */

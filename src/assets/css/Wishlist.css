@@ -1,0 +1,67 @@
+.wishlist {
+  width: 100%;
+  text-align: center;
+  padding: 150px 0px;
+}
+.wishlist h1 {
+  padding: 20px;
+}
+.wishlist .container {
+  width: 1140px;
+  margin: auto;
+}
+.wishlist .container .card {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border: none;
+}
+.wishlist .container .card .imgWrapper:hover button {
+  display: block;
+}
+.wishlist .container .card .imgWrapper {
+  width: 100%;
+  height: 252px;
+  margin-bottom: 13.6px;
+  position: relative;
+}
+.wishlist .container .card .imgWrapper button {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  background-color: white;
+  border-radius: 50%;
+  padding: 10px 15px;
+  border: none;
+  display: none;
+}
+.wishlist .container .card .imgWrapper .heart {
+  position: absolute;
+  right: 65px;
+  top: 15px;
+  background-color: white;
+  border-radius: 50%;
+  padding: 10px 15px;
+  border: none;
+  display: none;
+}
+.wishlist .container .card .imgWrapper img {
+  object-fit: cover;
+  width: 100%;
+  max-height: 100%;
+}
+.wishlist .container .card .article h6 {
+  font-family: "Roboto", sans-serif;
+  color: grey;
+  border: none;
+  margin: 0 0 7px 0;
+}
+.wishlist .container .card .article h4 {
+  margin: 0 0 7px 0;
+  font-weight: 500;
+  font-family: "Jost", sans-serif;
+}
+.wishlist .container .card .article h5 {
+  font-size: 0.9em;
+  margin: 0 0 0.5em 0;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}/*# sourceMappingURL=Wishlist.css.map */

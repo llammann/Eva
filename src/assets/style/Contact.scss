@@ -1,0 +1,189 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.contactUs {
+  width: 100%;
+  height: 600px;
+  padding: 150px 0;
+  background-position: bottom;
+  background-image: url("https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2022/10/Contact-Banner.jpg");
+  //   background-position: center;
+  // background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    // margin: auto;
+    color: #2c541d;
+    font-size: 70px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 8.5px;
+    font-family: "Jost", sans-serif;
+  }
+}
+
+.contact {
+  padding: 120px 0;
+  width: 100%;
+
+  .container {
+    width: 1140px;
+    margin: auto;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+
+    .left {
+      width: 50%;
+
+      h1 {
+        font-size: 37px;
+        font-weight: 600;
+        font-family: "Jost", sans-serif;
+        padding-bottom: 50px;
+      }
+
+      form {
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        padding: 60px 40px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: space-between;
+
+        input {
+          padding: 14px;
+          width: 100%;
+          margin-bottom: 15px;
+          border: 1px solid rgb(233, 225, 225);
+          font-family: "Roboto", sans-serif;
+          font-weight: 400;
+          font-size: 17px;
+          font-size: 1rem;
+          line-height: 1.7em;
+        }
+
+        .message {
+          padding: 10px 40px 70px 7px;
+        }
+
+        button {
+          font-weight: 400;
+          text-align: center;
+          font-family: Roboto, sans-serif;
+          font-size: 14px;
+          letter-spacing: 2px;
+          color: white;
+          padding: 13px 20px;
+          background-color: #74a84a;
+          border: none;
+        }
+      }
+    }
+
+    .right {
+      width: 50%;
+      padding: 0 10px 10px 70px;
+
+      h1 {
+        font-size: 37px;
+        font-weight: 600;
+        font-family: "Jost", sans-serif;
+        padding-bottom: 50px;
+      }
+
+      ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        li {
+          display: flex;
+          align-items: start;
+          justify-content: start;
+          margin-bottom: 50px;
+
+          .icon {
+            width: 42px;
+            height: 42px;
+            padding: 6px;
+            border-radius: 50%;
+            border: 1px solid #74a84a;
+            margin-right: 15px;
+
+            img {
+              object-fit: cover;
+              padding: 4px;
+              width: 100%;
+              height: 100%;
+            }
+          }
+
+          div {
+            span {
+              line-height: 1.4;
+              color: #585858;
+              font-family: "Jost", sans-serif;
+              font-family: roboto, Sans-serif;
+              font-size: 16px;
+              font-weight: 400;
+            }
+
+            .Phone {
+              font-size: 20px;
+            }
+
+            .Place {
+              font-size: 25px;
+              width: 50px;
+            }
+
+            p {
+              color: #2c541d;
+              font-family: jost, Sans-serif;
+              line-height: 1.4em;
+              font-size: 17px;
+            }
+          }
+        }
+      }
+
+      .followUs {
+        padding-left: 60px;
+
+        p {
+          font-size: 20px;
+          font-weight: 500;
+          line-height: 1.25em;
+          font-family: "Jost", sans-serif;
+          padding-bottom: 20px;
+        }
+
+        .follow {
+          display: flex;
+          align-items: start;
+          justify-content: start;
+
+          span {
+            width: fit-content;
+            display: flex;
+            align-items: start;
+            justify-content: start;
+            background-color: #74a84a;
+            border-radius: 50%;
+            padding: 5px;
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+.bigContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  position: fixed;
+  z-index: 999;
+}
+.bigContainer .userNavbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1180px;
+  margin: auto;
+}
+.bigContainer .userNavbar h1 a {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  letter-spacing: 3px;
+  font-size: 25px;
+  text-decoration: none;
+  color: black;
+}
+.bigContainer .userNavbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+}
+.bigContainer .userNavbar ul li {
+  margin: 0;
+  padding: 0;
+  line-height: 100px;
+  padding: 0 20px;
+}
+.bigContainer .userNavbar ul li :hover {
+  color: #74a84a;
+}
+.bigContainer .userNavbar ul li a {
+  text-decoration: none;
+  color: #000000;
+  font-family: Roboto, sans-serif;
+  font-weight: inherit;
+  letter-spacing: 2px;
+}
+.bigContainer .userNavbar ul .bag {
+  padding-right: 0;
+}
+.bigContainer .userNavbar ul .bag sup {
+  background-color: black;
+  color: white;
+  padding: 4px;
+  border-radius: 50%;
+}/*# sourceMappingURL=UserNavbar.css.map */

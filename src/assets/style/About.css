@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.aboutImg {
+  width: 100%;
+  height: 600px;
+  padding: 150px 0;
+  background-image: url("https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2022/10/About-banner.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.aboutImg div {
+  text-align: center;
+}
+.aboutImg div h1 {
+  font-size: 60px;
+  letter-spacing: 7px;
+  color: #2c541d;
+  margin: 0;
+  padding: 0;
+  font-family: "Jost", sans-serif;
+}
+
+.ourMission {
+  width: 100%;
+  height: 500px;
+  padding: 40px 40px 40px 40px;
+  margin: 100px 0;
+}
+.ourMission .container {
+  width: 1140px;
+  margin: auto;
+}
+.ourMission .container .mission1 {
+  display: flex;
+  flex-direction: row;
+}
+.ourMission .container .mission1 .mountainImage3 img {
+  width: 550px;
+}
+.ourMission .mission2 {
+  display: flex;
+  flex-direction: column;
+  padding: 100px;
+  font-family: "Roboto", sans-serif;
+}
+.ourMission .mission2 h1 {
+  padding-bottom: 20px;
+}
+.ourMission .mission2 p {
+  line-height: 1.7em;
+}
+.ourMission .mission2 .wish {
+  padding-top: 20px;
+}
+
+.theGift {
+  background-image: url("https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2022/10/Talk-to-us.jpg");
+  text-align: center;
+  width: 100%;
+  height: 390px;
+  padding: 100px 0 200px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.theGift h1 {
+  font-size: 2.4117647059rem;
+  font-weight: 500;
+  font-family: "Jost", sans-serif;
+  padding-bottom: 15px;
+  letter-spacing: 4.92px;
+}
+.theGift h5 {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.7em;
+  color: #788393;
+  padding-bottom: 40px;
+  font-family: "Roboto", sans-serif;
+}
+.theGift button {
+  font-weight: 400;
+  text-align: center;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  letter-spacing: 3px;
+  color: white;
+  padding: 13px 20px;
+  background-color: #74a84a;
+  border: none;
+}/*# sourceMappingURL=About.css.map */

@@ -1,0 +1,161 @@
+.bigContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 999;
+}
+.bigContainer .userNavbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1180px;
+  margin: 0 auto;
+  position: absolute;
+  top: 0;
+}
+.bigContainer .userNavbar h1 a {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  letter-spacing: 3px;
+  font-size: 25px;
+  text-decoration: none;
+  color: black;
+}
+.bigContainer .userNavbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+}
+.bigContainer .userNavbar ul .Checkout :hover {
+  color: black;
+}
+.bigContainer .userNavbar ul li {
+  margin: 0;
+  padding: 0;
+  line-height: 100px;
+  padding: 0 20px;
+}
+.bigContainer .userNavbar ul li :hover {
+  color: #74a84a;
+}
+.bigContainer .userNavbar ul li a {
+  text-decoration: none;
+  color: #000000;
+  font-family: Roboto, sans-serif;
+  font-weight: inherit;
+  letter-spacing: 2px;
+}
+.bigContainer .userNavbar ul .bag,
+.bigContainer .userNavbar ul .wish {
+  padding: 0;
+}
+.bigContainer .userNavbar ul .bag .up,
+.bigContainer .userNavbar ul .wish .up {
+  width: 4px;
+  height: 4px;
+}
+.bigContainer .userNavbar ul .bag .up span,
+.bigContainer .userNavbar ul .wish .up span {
+  font-size: 10px;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  padding: 4px 7px;
+  border-radius: 50%;
+  max-width: fit-content;
+  font-family: Roboto, sans-serif;
+}
+.bigContainer .userNavbar ul .bag .recentlyViewed,
+.bigContainer .userNavbar ul .wish .recentlyViewed {
+  width: 100%;
+}
+.bigContainer .userNavbar ul .bag .recentlyViewed h3,
+.bigContainer .userNavbar ul .wish .recentlyViewed h3 {
+  font-style: inherit;
+  font-family: "Jost", sans-serif;
+  font-size: 1.4117647059rem;
+  padding-bottom: 16.8px;
+}
+.bigContainer .userNavbar ul .bag .recentlyViewed .viewed,
+.bigContainer .userNavbar ul .wish .recentlyViewed .viewed {
+  border-bottom: 1px solid rgb(213, 205, 205);
+}
+.bigContainer .userNavbar ul .bag .recentlyViewed .viewed ul,
+.bigContainer .userNavbar ul .wish .recentlyViewed .viewed ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+.bigContainer .userNavbar ul .bag .recentlyViewed .viewed ul :last-child,
+.bigContainer .userNavbar ul .wish .recentlyViewed .viewed ul :last-child {
+  border: none;
+}
+.bigContainer .userNavbar ul .bag .recentlyViewed .viewed ul li,
+.bigContainer .userNavbar ul .wish .recentlyViewed .viewed ul li {
+  width: 100%;
+  border-bottom: 1px solid rgb(213, 205, 205);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 7px;
+  margin-bottom: 15px;
+  line-height: 0;
+}
+.bigContainer .userNavbar ul .bag .recentlyViewed .viewed ul li .left,
+.bigContainer .userNavbar ul .wish .recentlyViewed .viewed ul li .left {
+  display: flex;
+}
+.bigContainer .userNavbar ul .bag .recentlyViewed .viewed ul li .left .imgWrapper,
+.bigContainer .userNavbar ul .wish .recentlyViewed .viewed ul li .left .imgWrapper {
+  width: 68px;
+  height: 68px;
+}
+.bigContainer .userNavbar ul .bag .recentlyViewed .viewed ul li .left .imgWrapper img,
+.bigContainer .userNavbar ul .wish .recentlyViewed .viewed ul li .left .imgWrapper img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.bigContainer .userNavbar ul .bag .recentlyViewed .viewed ul li .left .articles,
+.bigContainer .userNavbar ul .wish .recentlyViewed .viewed ul li .left .articles {
+  flex-direction: column;
+  padding-left: 15px;
+  display: flex;
+  align-items: flex-start;
+}
+.bigContainer .userNavbar ul .bag .recentlyViewed .viewed ul li .left .articles .name,
+.bigContainer .userNavbar ul .wish .recentlyViewed .viewed ul li .left .articles .name {
+  font-weight: 500;
+  font-size: 100%;
+  font-style: inherit;
+  color: #9ca84a;
+  padding-bottom: 10px;
+}
+.bigContainer .userNavbar ul .bag .recentlyViewed .viewed ul li .left .articles .price,
+.bigContainer .userNavbar ul .wish .recentlyViewed .viewed ul li .left .articles .price {
+  font-size: 100%;
+  font-style: inherit;
+  line-height: 1.5;
+  font-weight: 400;
+}
+.bigContainer .userNavbar ul .bag .recentlyViewed .viewed ul li .cancel,
+.bigContainer .userNavbar ul .wish .recentlyViewed .viewed ul li .cancel {
+  max-width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bigContainer .userNavbar ul .bag .recentlyViewed .viewed ul li .cancel button,
+.bigContainer .userNavbar ul .wish .recentlyViewed .viewed ul li .cancel button {
+  background-color: transparent;
+  border: none;
+}
+.bigContainer .userNavbar ul .bag .recentlyViewed .viewed ul li .cancel button .CancelCart,
+.bigContainer .userNavbar ul .wish .recentlyViewed .viewed ul li .cancel button .CancelCart {
+  font-size: 30px;
+  color: #74a84a;
+}/*# sourceMappingURL=Dashboard.css.map */
