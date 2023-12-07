@@ -10,10 +10,10 @@ import axios from "axios";
 const Login = Yup.object().shape({
   username: Yup.string().required("Please enter your username"),
   password: Yup.string()
-    .required("Please enter the correct password!")
+    .required("Please entered the Correct password!")
     .matches(
-      /^(?=.[a-z])(?=.\d).{8,}$/,
-      "Password must contain at least 8 characters, including one letter and one number"
+      /^(?=.\d)(?=.[a-z])(?=.*[A-Z]).{8,}$/,
+      "Please entered the Correct password!"
     ),
   confirm_password: Yup.string()
     .required("Please confirm your password")
@@ -71,6 +71,7 @@ function index() {
                       email: values.email,
                       wishlist: [],
                       basket: [],
+                      orders: [],
                       balance: values.balance,
                     });
 
@@ -120,6 +121,20 @@ function index() {
                         <Field className="password" name="password" />
                       </div>
                     </div>
+                    {errors.password && touched.password && (
+                      <div
+                        style={
+                          errors.password &&
+                          touched.password && {
+                            fontSize: "17px",
+                            color: "red",
+                            marginTop: "-20px",
+                          }
+                        }
+                      >
+                        {errors.password}
+                      </div>
+                    )}
                     {/* Error handling for password */}
 
                     <div className="input">
