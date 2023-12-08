@@ -23,6 +23,21 @@
   text-decoration: none;
   color: black;
 }
+.bigContainer .userNavbar .dropdownMenu {
+  display: none;
+}
+.bigContainer .userNavbar .dropdownMenu a {
+  text-decoration: none;
+}
+.bigContainer .userNavbar #components-dropdown-demo-arrow .ant-btn {
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+.bigContainer .userNavbar .ant-row-rtl #components-dropdown-demo-arrow .ant-btn {
+  margin-right: 0;
+  margin-bottom: 8px;
+  margin-left: 8px;
+}
 .bigContainer .userNavbar ul {
   list-style: none;
   display: flex;
@@ -165,4 +180,20 @@
 .bigContainer .userNavbar ul .wish .recentlyViewed .viewed ul li .cancel button .CancelCart {
   font-size: 30px;
   color: #74a84a;
+}
+
+@media only screen and (max-width: 920px) {
+  .userNavbar {
+    padding: 22px;
+    max-width: 100% !important;
+  }
+  .userNavbar .card1 {
+    width: 100%;
+  }
+  .userNavbar ul {
+    display: none !important;
+  }
+  .userNavbar .dropdownMenu {
+    display: block !important;
+  }
 }/*# sourceMappingURL=UserNavbar.css.map */

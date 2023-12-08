@@ -11,11 +11,78 @@ import { MdFavorite } from "react-icons/md";
 import { width } from "@mui/system";
 import { TiDeleteOutline } from "react-icons/ti";
 
+// Menu
+import { MenuOutlined } from "@ant-design/icons";
+import { Button, Dropdown } from "antd";
+
 import { removeFromBasket } from "../../Config/BasketSlice";
 
 import NavDropdown from "react-bootstrap/NavDropdown";
 
 function UserNavbar() {
+
+// MENU
+const items = [
+  {
+    key: "1",
+    label: (
+      <a target="" rel="noopener noreferrer" href="/">
+        Home
+      </a>
+    ),
+  },
+  {
+    key: "2",
+    label: (
+      <a target="" rel="noopener noreferrer" href="/about">
+        About
+      </a>
+    ),
+  },
+  {
+    key: "3",
+    label: (
+      <a target="" rel="noopener noreferrer" href="/contact">
+        Contact
+      </a>
+    ),
+  },
+  {
+    key: "4",
+    label: (
+      <a target="" rel="noopener noreferrer" href="/shop">
+        Shop
+      </a>
+    ),
+  },
+  {
+    key: "5",
+    label: (
+      <a target="" rel="noopener noreferrer" href="/wishlist">
+        Wishlist
+      </a>
+    ),
+  },
+  {
+    key: "6",
+    label: (
+      <a target="" rel="noopener noreferrer" href="/basket">
+        Basket
+      </a>
+    ),
+  },
+  {
+    key: "7",
+    label: (
+      <a target="" rel="noopener noreferrer" href="/login">
+        Login
+      </a>
+    ),
+  },
+];
+// MENU
+
+
   let user = JSON.parse(localStorage.getItem("user"));
   const dispatch = useDispatch();
 
@@ -58,6 +125,20 @@ function UserNavbar() {
             <Link to="/">EARTH STORE</Link>
           </h1>
           <div>
+          <Dropdown
+              className="dropdownMenu"
+              menu={{
+                items,
+              }}
+              placement="bottomLeft"
+              arrow
+            >
+              <Button>
+                <MenuOutlined />
+              </Button>
+            </Dropdown>
+
+            {/* MENU */}
             <ul>
               <li>
                 <Link to="/">HOME</Link>

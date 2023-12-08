@@ -14,6 +14,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    // width: 100% !important;
     width: 1180px;
     margin: 0 auto;
     position: absolute;
@@ -28,7 +29,24 @@
         color: black;
       }
     }
+    // MENU
+    .dropdownMenu {
+      display: none;
+      a {
+        text-decoration: none;
+      }
+    }
+    #components-dropdown-demo-arrow .ant-btn {
+      margin-right: 8px;
+      margin-bottom: 8px;
+    }
+    .ant-row-rtl #components-dropdown-demo-arrow .ant-btn {
+      margin-right: 0;
+      margin-bottom: 8px;
+      margin-left: 8px;
+    }
 
+    // MENU
     ul {
       list-style: none;
       display: flex;
@@ -179,6 +197,22 @@
           }
         }
       }
+    }
+  }
+}
+
+@media only screen and (max-width: 920px) {
+  .userNavbar {
+    padding: 22px;
+    max-width: 100% !important;
+    .card1 {
+      width: 100%;
+    }
+    ul {
+      display: none !important;
+    }
+    .dropdownMenu {
+      display: block !important;
     }
   }
 }
