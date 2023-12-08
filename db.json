@@ -45,7 +45,7 @@
       "name": "Postcard V2",
       "category": "Postcard",
       "description": "Sending a travel postcard to a loved one is truly a thoughtful gesture that can bring joy and inspiration. Inspiration can come in the form of taking a break from the normal routine, while being reminded of the more adventurous and exotic destinations around the world.",
-      "price": 23.99,
+      "price": 30,
       "image": "https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2022/10/PostcardV2-min.jpg",
       "comments": []
     },
@@ -54,7 +54,7 @@
       "name": "Postcard V3",
       "category": "Postcard",
       "description": "Sending a travel postcard to a loved one is truly a thoughtful gesture that can bring joy and inspiration. Inspiration can come in the form of taking a break from the normal routine, while being reminded of the more adventurous and exotic destinations around the world.",
-      "price": 23.99,
+      "price": 10,
       "image": "https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2022/11/Postcard3.jpg",
       "comments": []
     },
@@ -72,7 +72,7 @@
       "name": "Postcard V5",
       "category": "Postcard",
       "description": "Sending a travel postcard to a loved one is truly a thoughtful gesture that can bring joy and inspiration. Inspiration can come in the form of taking a break from the normal routine, while being reminded of the more adventurous and exotic destinations around the world.",
-      "price": 23.99,
+      "price": 13.99,
       "image": "https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2021/08/PostcardV6.jpg",
       "comments": []
     }
@@ -388,6 +388,7 @@
       "username": "liam_wilson"
     },
     {
+      "username": "grace_taylor",
       "name": "Grace",
       "surname": "Taylor",
       "email": "grace.taylor@example.com",
@@ -395,10 +396,136 @@
       "orders": [],
       "isAdmin": false,
       "balance": 115.9,
-      "basket": [],
-      "wishlist": [],
-      "id": "31",
-      "username": "grace_taylor"
+      "basket": [
+        {
+          "count": 1,
+          "products": {
+            "id": 2,
+            "name": "Postcard V2",
+            "category": "Postcard",
+            "description": "Sending a travel postcard to a loved one is truly a thoughtful gesture that can bring joy and inspiration. Inspiration can come in the form of taking a break from the normal routine, while being reminded of the more adventurous and exotic destinations around the world.",
+            "price": 30,
+            "image": "https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2022/10/PostcardV2-min.jpg",
+            "comments": []
+          }
+        },
+        {
+          "count": 1,
+          "products": {
+            "id": 1,
+            "name": "Postcard V1",
+            "category": "Postcard",
+            "description": "Sending a travel postcard to a loved one is truly a thoughtful gesture that can bring joy and inspiration. Inspiration can come in the form of taking a break from the normal routine, while being reminded of the more adventurous and exotic destinations around the world.",
+            "price": 23.99,
+            "image": "https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2022/11/Postcard1.jpg",
+            "comments": [
+              {
+                "name": "lola",
+                "email": "gg..fdji@njs.ftrg",
+                "review": "this is good",
+                "rating": 0
+              },
+              {
+                "name": "natasha",
+                "email": "78e8d00@code.edu.az",
+                "review": "i dont like it",
+                "rating": 0
+              },
+              {
+                "name": "limon",
+                "email": "lemannazirli8@gmail.com",
+                "review": "not bad",
+                "rating": 0
+              },
+              {
+                "name": "random",
+                "email": "random@)))",
+                "review": "vayyyyy",
+                "rating": 0
+              },
+              {
+                "name": "Samaya",
+                "email": "israyillismaye@gmail.com",
+                "review": "Perfectt",
+                "rating": 0
+              }
+            ]
+          }
+        },
+        {
+          "count": 1,
+          "products": {
+            "id": 3,
+            "name": "Postcard V3",
+            "category": "Postcard",
+            "description": "Sending a travel postcard to a loved one is truly a thoughtful gesture that can bring joy and inspiration. Inspiration can come in the form of taking a break from the normal routine, while being reminded of the more adventurous and exotic destinations around the world.",
+            "price": 10,
+            "image": "https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2022/11/Postcard3.jpg",
+            "comments": []
+          }
+        }
+      ],
+      "wishlist": [
+        {
+          "id": 3,
+          "name": "Postcard V3",
+          "category": "Postcard",
+          "description": "Sending a travel postcard to a loved one is truly a thoughtful gesture that can bring joy and inspiration. Inspiration can come in the form of taking a break from the normal routine, while being reminded of the more adventurous and exotic destinations around the world.",
+          "price": 23.99,
+          "image": "https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2022/11/Postcard3.jpg",
+          "comments": []
+        },
+        {
+          "id": 1,
+          "name": "Postcard V1",
+          "category": "Postcard",
+          "description": "Sending a travel postcard to a loved one is truly a thoughtful gesture that can bring joy and inspiration. Inspiration can come in the form of taking a break from the normal routine, while being reminded of the more adventurous and exotic destinations around the world.",
+          "price": 23.99,
+          "image": "https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2022/11/Postcard1.jpg",
+          "comments": [
+            {
+              "name": "lola",
+              "email": "gg..fdji@njs.ftrg",
+              "review": "this is good",
+              "rating": 0
+            },
+            {
+              "name": "natasha",
+              "email": "78e8d00@code.edu.az",
+              "review": "i dont like it",
+              "rating": 0
+            },
+            {
+              "name": "limon",
+              "email": "lemannazirli8@gmail.com",
+              "review": "not bad",
+              "rating": 0
+            },
+            {
+              "name": "random",
+              "email": "random@)))",
+              "review": "vayyyyy",
+              "rating": 0
+            },
+            {
+              "name": "Samaya",
+              "email": "israyillismaye@gmail.com",
+              "review": "Perfectt",
+              "rating": 0
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Postcard V2",
+          "category": "Postcard",
+          "description": "Sending a travel postcard to a loved one is truly a thoughtful gesture that can bring joy and inspiration. Inspiration can come in the form of taking a break from the normal routine, while being reminded of the more adventurous and exotic destinations around the world.",
+          "price": 23.99,
+          "image": "https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2022/10/PostcardV2-min.jpg",
+          "comments": []
+        }
+      ],
+      "id": "31"
     },
     {
       "username": "noah_smith",
@@ -464,7 +591,7 @@
         }
       ],
       "isAdmin": false,
-      "balance": -95.53,
+      "balance": 700,
       "basket": [],
       "wishlist": [],
       "id": "32"
@@ -522,7 +649,7 @@
           }
         }
       ],
-      "favorites": [],
+      "wishlist": [],
       "id": "33",
       "username": "isabella_jones"
     },
