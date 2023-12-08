@@ -19,7 +19,7 @@ export default function ProfilePage() {
     const user = JSON.parse(localStorage.getItem("user"));
     setEditedUserData(user || {});
     setInitialUserData(user || {});
-  }, []); // Component ilk yuklenen anda istifadeye verilir
+  }, []); // Component ilk yuklenen anda ise dusur
 
   const handleEditClick = () => {
     setEditMode(true);
