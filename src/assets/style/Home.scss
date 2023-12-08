@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
 }
 
 .mountainImg {
@@ -58,10 +59,19 @@
 .homeCards {
   width: 100%;
   padding: 80px 45px;
+h4 {
+color: rgb(0, 0, 0);
+}
+h5 {
+color: grey;
+}
 
   .container {
     width: 1140px;
     margin: auto;
+    a {
+      text-decoration: none;
+    }
     // background-color: red;
     .imgWrapper:hover button {
       display: block;
@@ -122,6 +132,8 @@
     }
   }
 }
+
+
 
 .comments {
   width: 100%;

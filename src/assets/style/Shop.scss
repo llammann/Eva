@@ -207,6 +207,9 @@
       }
 
       .allProducts {
+        a {
+          text-decoration: none;
+        }
         .card {
           border: none;
           .imgWrapper:hover button {

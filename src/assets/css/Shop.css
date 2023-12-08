@@ -171,6 +171,9 @@
   font-family: "Roboto", sans-serif;
   color: #586073;
 }
+.shop .container .right .allProducts a {
+  text-decoration: none;
+}
 .shop .container .right .allProducts .card {
   border: none;
 }

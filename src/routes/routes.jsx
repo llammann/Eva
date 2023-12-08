@@ -9,6 +9,7 @@ import Detail from "../pages/user/detail";
 import Home from "../pages/user/home";
 import UserProfile from "../pages/user/userProfile";
 import UserRoot from "../pages/user/userRoot";
+import AdminRoot from "../pages/admin/adminRoot";
 import Checkout from "../pages/user/checkout";
 import Dashboard from "../pages/admin/dashboard";
 import Users from "../pages/admin/users";
@@ -27,16 +28,12 @@ export const routes = [
         element: <Home />,
       },
       {
-        path: "detail",
+        path: "shop/:id",
         element: <Detail />,
       },
       {
         path: "profile",
         element: <UserProfile />,
-      },
-      {
-        path: "shop",
-        element: <Shop />,
       },
       {
         path: "shop",
@@ -73,11 +70,11 @@ export const routes = [
     ],
   },
   {
-    path: "/admin",
-    element: <AdminHome />,
+    path: "/",
+    element: <AdminRoot />,
     children: [
       {
-        index: true,
+        path: "/login",
         element: <AdminLogin />,
       },
       {

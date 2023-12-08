@@ -11,6 +11,7 @@ const WishlistSlice = createSlice({
   initialState,
   reducers: {
     handleWishlist: (state, action) => {
+      console.log("limon,state.wishlist",state.wishlist)
       const existingItemIndex = state.wishlist.findIndex(
         (item) => item.id === action.payload?.id
       );
@@ -36,17 +37,17 @@ const WishlistSlice = createSlice({
 
       console.log("idToRemove:", idToRemove);
 
-      if (idToRemove) {
+      if (Array.isArray(state.wishlist)) {
         // Find the index of the item with the matching id in the wishlist
         const indexToRemove = state.wishlist.findIndex(
           (item) => item.id === idToRemove
         );
-        console.log(state.wishlist);
+        // console.log(state.wishlist);
         // If the item is found, remove it using splice
         if (indexToRemove !== -1) {
           state.wishlist.splice(indexToRemove, 1);
         } else {
-          console.warn("Item not found in wishlist.");
+          console.log("Item not found in wishlist.");
         }
 
         // Update localStorage with the modified wishlist

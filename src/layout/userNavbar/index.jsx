@@ -26,7 +26,7 @@ function UserNavbar() {
 
     // const user = JSON.parse(localStorage.getItem("user"));
 
-    axios.put("http://localhost:3000/users/${user.id}", JSON.stringify(user), {
+    axios.put(`http://localhost:3000/users/${user.id}`, JSON.stringify(user), {
       headers: {
         "Content-Type": "application/json",
       },

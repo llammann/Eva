@@ -1,25 +1,46 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import Button from "react-bootstrap/Button";
 import {
   MDBCol,
   MDBContainer,
   MDBRow,
   MDBCard,
-  MDBCardText,
   MDBCardBody,
   MDBCardImage,
-  MDBBtn,
 } from "mdb-react-ui-kit";
 
 export default function ProfilePage() {
-  // useEffect(() => {
-  //   axios.get(http://localhost:3000/users}).then((res) => {
-  //     users = res.data;
-  //   });
-  // }, []);
-  // const userProfile = users.find();
+  const [editMode, setEditMode] = useState(false);
+  const [editedUserData, setEditedUserData] = useState({});
+
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("user"));
+    setEditedUserData(user || {});
+  }, []); //! Component ilk yuklenen anda ise dusur
+
+  const handleEditClick = () => {
+    setEditMode(true);
+  };
+
+  const handleSaveClick = () => {
+    localStorage.setItem("user", JSON.stringify(editedUserData));
+    setEditMode(false);
+  };
+
+  const handleCancelClick = () => {
+    setEditMode(false);
+    const user = JSON.parse(localStorage.getItem("user"));
+    setEditedUserData(user || {});
+  };
+
   return (
-    <section style={{ backgroundColor: "#eee", padding: "150px" }}>
+    <section
+      style={{
+        backgroundColor: "#BAEB9D",
+        padding: "150px",
+        paddingLeft: "950px",
+      }}
+    >
       <MDBContainer className="py-5">
         <MDBRow>
           <MDBCol lg="4">
@@ -32,70 +53,130 @@ export default function ProfilePage() {
                   style={{ width: "150px" }}
                   fluid
                 />
-                <p className="text-muted mb-1">Full Stack Developer</p>
-                <p className="text-muted mb-4">Bay Area, San Francisco, CA</p>
+
+                <p className="text-muted mb-1">
+                  {!editMode ? (
+                    editedUserData.username
+                  ) : (
+                    <input
+                      type="text"
+                      value={editedUserData.username || ""}
+                      onChange={(e) =>
+                        setEditedUserData({
+                          ...editedUserData,
+                          username: e.target.value,
+                        })
+                      }
+                    />
+                  )}
+                </p>
+                <p className="text-muted mb-4">
+                  {!editMode ? (
+                    editedUserData.name
+                  ) : (
+                    <input
+                      type="text"
+                      value={editedUserData.name || ""}
+                      onChange={(e) =>
+                        setEditedUserData({
+                          ...editedUserData,
+                          name: e.target.value,
+                        })
+                      }
+                    />
+                  )}
+                </p>
+                <p className="text-muted mb-4">
+                  {!editMode ? (
+                    editedUserData.surname
+                  ) : (
+                    <input
+                      type="text"
+                      value={editedUserData.surname || ""}
+                      onChange={(e) =>
+                        setEditedUserData({
+                          ...editedUserData,
+                          surname: e.target.value,
+                        })
+                      }
+                    />
+                  )}
+                </p>
+                <p className="text-muted mb-4">
+                  {!editMode ? (
+                    editedUserData.password
+                  ) : (
+                    <input
+                      type="text"
+                      value={editedUserData.password || ""}
+                      onChange={(e) =>
+                        setEditedUserData({
+                          ...editedUserData,
+                          password: e.target.value,
+                        })
+                      }
+                    />
+                  )}
+                </p>
+                <p className="text-muted mb-4">
+                  {!editMode ? (
+                    editedUserData.email
+                  ) : (
+                    <input
+                      type="text"
+                      value={editedUserData.email || ""}
+                      onChange={(e) =>
+                        setEditedUserData({
+                          ...editedUserData,
+                          email: e.target.value,
+                        })
+                      }
+                    />
+                  )}
+                </p>
+                <p className="text-muted mb-4">
+                  {!editMode ? (
+                    editedUserData.balance
+                  ) : (
+                    <input
+                      type="text"
+                      value={editedUserData.balance || ""}
+                      onChange={(e) =>
+                        setEditedUserData({
+                          ...editedUserData,
+                          balance: e.target.value,
+                        })
+                      }
+                    />
+                  )}
+                </p>
                 <div className="d-flex justify-content-center mb-2">
-                  <MDBBtn style={{ backgroundColor: "green", border: "none" }}>
-                    Follow
-                  </MDBBtn>
-                  <MDBBtn
-                    outline
-                    className="ms-1"
-                    style={{ border: "1px solid green", color: "green" }}
-                  >
-                    Message
-                  </MDBBtn>
+                  {!editMode ? (
+                    <Button variant="warning" onClick={handleEditClick}>
+                      Edit Profile
+                    </Button>
+                  ) : (
+                    <>
+                      <Button
+                        variant="primary"
+                        style={{
+                          backgroundColor: "green",
+                          border: "none",
+                          marginRight: "8px",
+                        }}
+                        onClick={handleSaveClick}
+                      >
+                        Save
+                      </Button>{" "}
+                      <Button
+                        variant="outline-success"
+                        onClick={handleCancelClick}
+                      >
+                        Cancel
+                      </Button>
+                    </>
+                  )}
                 </div>
-              </MDBCardBody>
-            </MDBCard>
-          </MDBCol>
-          <MDBCol lg="8">
-            <MDBCard className="mb-4">
-              <MDBCardBody>
-                <MDBRow>
-                  <MDBCol sm="3">
-                    <MDBCardText>Username</MDBCardText>
-                  </MDBCol>
-                  <MDBCol sm="9">
-                    <MDBCardText className="text-muted">
-                      {/* {element.username} */}
-                    </MDBCardText>
-                  </MDBCol>
-                </MDBRow>
-                <hr />
-                <MDBRow>
-                  <MDBCol sm="3">
-                    <MDBCardText>Email</MDBCardText>
-                  </MDBCol>
-                  <MDBCol sm="9">
-                    <MDBCardText className="text-muted">
-                      {/* {element.email} */}
-                    </MDBCardText>
-                  </MDBCol>
-                </MDBRow>
-                <hr />
-                <MDBRow>
-                  <MDBCol sm="3">
-                    <MDBCardText>Password</MDBCardText>
-                  </MDBCol>
-                  <MDBCol sm="9">
-                    <MDBCardText className="text-muted">
-                      {/* {element.password} */}
-                    </MDBCardText>
-                  </MDBCol>
-                </MDBRow>
-                <hr />
-                <MDBRow>
-                  <MDBCol sm="3">
-                    <MDBCardText>Balance</MDBCardText>
-                  </MDBCol>
-                  <MDBCol sm="9">
-                    <MDBCardText className="text-muted">
-                      {/* {element.balance} */}
-                    </MDBCardText>
-                  </MDBCol>
-                </MDBRow>
-                <hr />
               </MDBCardBody>
             </MDBCard>
           </MDBCol>

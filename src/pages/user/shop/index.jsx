@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "../../../assets/style/Shop.scss";
 import Grid from "@mui/material/Grid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -142,7 +143,7 @@ function Shop() {
             <h1>Shop</h1>
 
             <div className="resultsSorting">
-              <p>Showing all 12 results</p>
+              <p>Showing all {products.length} results</p>
 
               <div className="sorting">
                 <select name="sorting" id="sorting">
@@ -161,6 +162,7 @@ function Shop() {
                 <Grid container columns={{ xs: 4, md: 12 }} spacing={3}>
                   {products.map((x) => (
                     <Grid item xs={4} key={x.id}>
+                     <Link to={"/shop/" + x.id}>
                       <div className="card">
                         <div className="imgWrapper">
                           <button onClick={() => handleBuy(x)}>
@@ -187,6 +189,7 @@ function Shop() {
                           <h5>${x.price}</h5>
                         </div>
                       </div>
+                    </Link>
                     </Grid>
                   ))}
                 </Grid>

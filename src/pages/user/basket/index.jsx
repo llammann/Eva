@@ -63,7 +63,6 @@ function Basket() {
                             className="minus"
                             onClick={() => {
                               dispatch(handleMinus(x));
-                              dispatch(updateBasket());
                             }}
                           >
                             -
@@ -74,7 +73,6 @@ function Basket() {
                             onClick={() => {
                               console.log("Before dispatching Plus");
                               dispatch(handlePlus(x));
-                              dispatch(updateBasket());
                               console.log("After dispatching Plus");
                             }}
                           >

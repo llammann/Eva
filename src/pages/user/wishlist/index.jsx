@@ -16,6 +16,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Icon, { SearchOutlined } from "@ant-design/icons";
 
+import { handleBasket } from "../../../Config/BasketSlice";
 
 
 function Wishlist() {
@@ -25,6 +26,14 @@ function Wishlist() {
   const MyWishlist = useSelector((state) => state.wishlist.wishlist);
 console.log(MyWishlist);
   const dispatch = useDispatch();
+
+  const handleBuy = (element) => {
+    dispatch(handleBasket(element));
+  };
+
+  const handleWish = (element) => {
+    dispatch(handleWishlist(element));
+  };
 
   return (
     <>
@@ -39,7 +48,9 @@ console.log(MyWishlist);
                   <Grid item xs={4} key={wish.id}>
                     <div className="card">
                       <div className="imgWrapper">
-                        <button>
+                        <button
+                        onClick={() => handleBuy(x)}
+                        >
                           <FontAwesomeIcon
                             icon={faBagShopping}
                             style={{ color: "#2C541D", fontSize: "15px" }}

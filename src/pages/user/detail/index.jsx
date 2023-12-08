@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 import Icon, { SearchOutlined } from "@ant-design/icons";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
@@ -13,7 +15,33 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "../../../assets/style/Detail.scss";
 
+import { useDispatch, useSelector } from "react-redux";
+import {
+  handleMinus,
+  handlePlus,
+  handleBasket,
+} from "../../../Config/BasketSlice";
+
 function Detail() {
+  const { id } = useParams();
+  const [product, setProduct] = useState({});
+
+  const [newComment, setNewComment] = useState({
+    name: "",
+    email: "",
+    review: "",
+    rating: 0,
+  });
+
+  const [activeTab, setActiveTab] = useState("description");
+  useEffect(() => {
+    axios("http://localhost:3000/products/" + id).then((res) => {
+      setProduct(res.data);
+    });
+  }, []);
+  console.log("laman Producttti", product);
+  const dispatch = useDispatch();
+
   return (
     <>
       <section className="details">
@@ -29,32 +57,47 @@ function Detail() {
           </div>
 
           <div className="description">
-            <span>Home/Posters/Poster V3</span>
+            <span>Home/Posters/{product.name}</span>
 
-            <h3>Posters</h3>
-            <h2>Poster V3</h2>
-            <h4>$14.99</h4>
-            <p>
-              Inspirational posters are a great way to be inspired and
-              encouraged to take on new challenges and adventures. Hang up a
-              poster at home or in the office to be reminded how much beauty
-              awaits in the world, luring you out of your comfort zone and into
-              a world where possibility resides.
-            </p>
+            <h3>{product.category}</h3>
+            <h2>{product.name}</h2>
+            <h4>${product.price}</h4>
+            <p>{product.description} </p>
             <div className="buttons">
               <div className="quantity">
-                <button className="minus">-</button>
-                <span>1</span>
-                <button className="plus">+</button>
+                <button
+                  className="minus"
+                  onClick={() => {
+                    dispatch(handleMinus(product));
+                  }}
+                >
+                  -
+                </button>
+                <span>{product.count}</span>
+                <button
+                  className="plus"
+                  onClick={() => {
+                    console.log("Before dispatching Plus");
+                    dispatch(handlePlus(product));
+                    console.log("After dispatching Plus");
+                  }}
+                >
+                  +
+                </button>
               </div>
 
-              <button className="addToChart">ADD TO CART</button>
+              <button
+                className="addToChart"
+                onClick={() => handleBasket(product)}
+              >
+                ADD TO CART
+              </button>
             </div>
 
             <hr />
 
             <span className="category">
-              Category: <span>Posters</span>
+              Category: <span>{product.category}</span>
             </span>
           </div>
         </div>
@@ -63,121 +106,163 @@ function Detail() {
       <section className="descriptionReviews">
         <div className="container">
           <div className="options">
-            <span className="description">
+            <span
+              className={`tab ${activeTab === "description" ? "active" : ""}`}
+              onClick={() => setActiveTab("description")}
+            >
               <a href="#">Description</a>
             </span>
-            <span className="reviews">
-              <a href="#">Reviews(0)</a>
+            <span
+              className={`tab ${activeTab === "reviews" ? "active" : ""}`}
+              onClick={() => setActiveTab("reviews")}
+            >
+              <a href="#">Reviews({product.comments?.length})</a>
             </span>
           </div>
 
-          {/* //!Description */}
-          {/* <div className="types">
-            <div className="type">
-              <h3 className="header">Framed Without Borders:</h3>
-              <ul>
-                <li>Printed on High-Quality vinyl.</li>
-                <li>1-inch thick wooden back frame.</li>
-                <li>No additional hanging hardware is required.</li>
-                <li>Care: Dust with a soft, dry cloth.</li>
-              </ul>
-            </div>
-            <div className="type">
-              <h3 className="header">Framed With Borders & Acrylic Glass</h3>
-              <ul>
-                <li>Printed on High-Quality vinyl.</li>
-                <li>1-inch thick wooden back frame.</li>
-                <li>No additional hanging hardware is required.</li>
-                <li>Care: Dust with a soft, dry cloth.</li>
-              </ul>
-            </div>
-          </div>
-          <p className="note">
-           <strong> Note:</strong> <em>There may be a slight difference in actual color, due to the
-            colors of display.</em>
-          </p> */}
-          {/* //!Reviews */}
-          <div className="reviewsSection">
-            <div className="comments">
-              <ul>
-                <li>
-                  <div className="imgWrapper">
-                    <img
-                      src="	https://secure.gravatar.com/avatar/b507128c4a8c964e410e4cf47bc89a67?s=60&d=mm&r=g"
-                      alt=""
-                    />
-                  </div>
-                  <div className="articles">
-                    <em>Your review is awating approval</em>
-                    <div className="stars">
-                      <StarBorderIcon />
-                      <StarBorderIcon />
-                      <StarBorderIcon />
-                      <StarBorderIcon />
-                      <StarBorderIcon />
-                    </div>
-                    <p>Your comment</p>
-                  </div>
-                </li>
-                <li>
-                  <div className="imgWrapper">
-                    <img
-                      src="	https://secure.gravatar.com/avatar/b507128c4a8c964e410e4cf47bc89a67?s=60&d=mm&r=g"
-                      alt=""
-                    />
-                  </div>
-                  <div className="articles">
-                    <em>Your review is awating approval</em>
-                    <div className="stars">
-                      <StarBorderIcon />
-                      <StarBorderIcon />
-                      <StarBorderIcon />
-                      <StarBorderIcon />
-                      <StarBorderIcon />
-                    </div>
-                    <p>Your comment</p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-
-            <form action="">
-              <h2>Add e review</h2>
-              <h4>
-                Your email address will not be published. Required fields are
-                marked *
-              </h4>
-              <span className="rating">Your rating *</span>
-              <span>
-                <StarBorderIcon />
-                <StarBorderIcon />
-                <StarBorderIcon />
-                <StarBorderIcon />
-                <StarBorderIcon />
-              </span>
-              <p>Your review *</p>
-              <input type="text" className="yourReview"/>
-              <div className="nameEmail">
-                <div className="name">
-                  <h3>Name *</h3>
-                  <input type="text" />
+          {activeTab === "description" && (
+            <div>
+              <div className="types">
+                <div className="type">
+                  <h3 className="header">Framed Without Borders:</h3>
+                  <ul>
+                    <li>Printed on High-Quality vinyl.</li>
+                    <li>1-inch thick wooden back frame.</li>
+                    <li>No additional hanging hardware is required.</li>
+                    <li>Care: Dust with a soft, dry cloth.</li>
+                  </ul>
                 </div>
-                <div className="email">
-                  <h3>Email *</h3>
-                  <input type="text" />
+                <div className="type">
+                  <h3 className="header">
+                    Framed With Borders & Acrylic Glass
+                  </h3>
+                  <ul>
+                    <li>Printed on High-Quality vinyl.</li>
+                    <li>1-inch thick wooden back frame.</li>
+                    <li>No additional hanging hardware is required.</li>
+                    <li>Care: Dust with a soft, dry cloth.</li>
+                  </ul>
                 </div>
               </div>
+              <p className="note">
+                <strong> Note:</strong>{" "}
+                <em>
+                  There may be a slight difference in actual color, due to the
+                  colors of display.
+                </em>
+              </p>
+            </div>
+          )}
+          {/* //!Reviews */}
+          {activeTab === "reviews" && (
+            <div className="reviewsSection">
+              <div className="comments">
+                <ul>
+                  {product.comments.map((comment) => (
+                    <li>
+                      <div className="imgWrapper">
+                        <img
+                          src="	https://secure.gravatar.com/avatar/b507128c4a8c964e410e4cf47bc89a67?s=60&d=mm&r=g"
+                          alt=""
+                        />
+                      </div>
+                      <div className="articles">
+                        <em>{comment.name}</em>
+                        <div className="stars">
+                          <StarBorderIcon />
+                          <StarBorderIcon />
+                          <StarBorderIcon />
+                          <StarBorderIcon />
+                          <StarBorderIcon />
+                        </div>
+                        <p>{comment.review}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-              <input type="checkbox" />
-              <span>
-                {" "}
-                Save my name, email, and website in this browser for the next
-                time I comment.
-              </span>
-              <br />
-              <button>SUBMIT</button>
-            </form>
-          </div>
+              <form action="">
+                <h2>Add e review</h2>
+                <h4>
+                  Your email address will not be published. Required fields are
+                  marked *
+                </h4>
+                <span className="rating">Your rating *</span>
+                <span>
+                  <StarBorderIcon />
+                  <StarBorderIcon />
+                  <StarBorderIcon />
+                  <StarBorderIcon />
+                  <StarBorderIcon />
+                </span>
+                <p>Your review *</p>
+                <input
+                  type="text"
+                  value={newComment.review}
+                  className="yourReview"
+                  onChange={(e) => {
+                    // console.log(e.target.value)
+                    setNewComment({ ...newComment, review: e.target.value });
+                    // console.log("salam")
+                  }}
+                />
+                <div className="nameEmail">
+                  <div className="name">
+                    <h3>Name *</h3>
+                    <input
+                      type="text"
+                      value={newComment.name}
+                      onChange={(e) => {
+                        console.log(e.target.value);
+                        setNewComment({ ...newComment, name: e.target.value });
+                      }}
+                    />
+                  </div>
+                  <div className="email">
+                    <h3>Email *</h3>
+                    <input
+                      type="text"
+                      value={newComment.email}
+                      onChange={(e) => {
+                        // console.log(e.target.value)
+                        setNewComment({ ...newComment, email: e.target.value });
+                      }}
+                    />
+                  </div>
+                </div>
+
+                <input type="checkbox" />
+                <span>
+                  {" "}
+                  Save my name, email, and website in this browser for the next
+                  time I comment.
+                </span>
+                <br />
+                <button
+                  onClick={() => {
+                    console.log(newComment);
+                    console.log("olmadi daaaaaaaaAAAAAa");
+                    axios
+                      .patch(`http://localhost:3000/products/${id}`, {
+                        comments: [...product.comments, newComment],
+                      })
+                      .then((res) => {
+                        setProduct({ ...product, comments: res.data.comments });
+                      });
+                    setNewComment({
+                      name: "",
+                      email: "",
+                      review: "",
+                      rating: 0,
+                    });
+                  }}
+                >
+                  SUBMIT
+                </button>
+              </form>
+            </div>
+          )}
         </div>
       </section>
 
