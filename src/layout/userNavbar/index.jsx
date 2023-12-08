@@ -244,7 +244,9 @@ function UserNavbar() {
                             color: "white",
                           }}
                         >
-                          <Link to="/checkout">CHECKOUT</Link>
+                          <Link to="/checkout" style={{ color: "white" }}>
+                            CHECKOUT
+                          </Link>
                         </button>
                       </div>
                     </div>

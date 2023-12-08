@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import {
   ChakraProvider,
   Modal,
@@ -23,6 +24,11 @@ import {
   Td,
   TableContainer,
 } from "@chakra-ui/react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBagShopping, faUser } from "@fortawesome/free-solid-svg-icons";
+import { useSelector, useDispatch } from "react-redux";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import "./../../../assets/style/Dashboard.scss";
 import "./../../../assets/style/admin/AdminHome.scss";
 
 function Users() {
@@ -37,13 +43,22 @@ function Users() {
   const [isEditing, setIsEditing] = useState(false);
   const [selectedEmail, setSelectedEmail] = useState("all");
 
+  const dispatch = useDispatch();
+  let myUser = JSON.parse(localStorage.getItem("user"));
+
+  const handleLogOut = () => {
+    window.localStorage.removeItem("user");
+    sessionStorage.setItem("userlogin", JSON.stringify(false));
+    window.location.reload();
+  };
+
   useEffect(() => {
     fetchData();
   }, []);
 
   const fetchData = async () => {
     try {
-      const userData = await axios("http://localhost:3000/users");
+      const userData = await axios.get("http://localhost:3000/users");
       setData(userData.data);
       setFilteredData(userData.data);
     } catch (error) {
@@ -54,11 +69,14 @@ function Users() {
   useEffect(() => {
     const filteredUsers = data.filter((element) => {
       const isMatchingSearchTerm =
-        element.username.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        element.email.toLowerCase().includes(searchTerm.toLowerCase());
+        (element.username &&
+          element.username.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (element.email &&
+          element.email.toLowerCase().includes(searchTerm.toLowerCase()));
 
       const isMatchingEmail =
-        selectedEmail === "all" || element.email === selectedEmail;
+        selectedEmail === "all" ||
+        (element.email && element.email === selectedEmail);
 
       return isMatchingSearchTerm && isMatchingEmail;
     });
@@ -107,6 +125,46 @@ function Users() {
 
   return (
     <ChakraProvider>
+      <div className="userNavbar">
+        <h1>
+          <Link to="/admin">Add Users</Link>
+        </h1>
+        <div>
+          <ul>
+            <li>
+              <Link to="/admin/addProducts">Add Products</Link>
+            </li>
+            <li>
+              <Link to="/admin/products">Products</Link>
+            </li>
+            <li>
+              <Link to="/admin/users">Users</Link>
+            </li>
+            <li>
+              <Link to="/admin/addUsers">Add Users</Link>
+            </li>
+            <li>
+              {myUser ? (
+                <NavDropdown title={myUser.username} id="basic-nav-dropdown">
+                  <NavDropdown.Item onClick={handleLogOut}>
+                    Log out
+                  </NavDropdown.Item>
+                  <NavDropdown.Item>
+                    <Link to="/profile">User Profile</Link>
+                  </NavDropdown.Item>
+                </NavDropdown>
+              ) : (
+                <Link to="/login">
+                  <FontAwesomeIcon
+                    icon={faUser}
+                    style={{ color: "#2C541D", fontSize: "20px" }}
+                  />
+                </Link>
+              )}
+            </li>
+          </ul>
+        </div>
+      </div>
       <div className="container">
         <div className="search-section">
           <Input

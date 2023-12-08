@@ -3,6 +3,8 @@ import "./../../../assets/style/Basket.scss";
 // import { IconName } from "react-icons/ai";
 import { TiDeleteOutline } from "react-icons/ti";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+
 import {
   handleMinus,
   handlePlus,
@@ -109,26 +111,33 @@ function Basket() {
               </h5>
             </div>
             <div className="body">
-            <hr />
-            <div className="sub">
-              <span>Subtotal</span>
-              <span>${subtotal.toFixed(2)}</span>
-            </div>
-            <hr
-              style={{
-                width: "90%",
-                margin:"auto"
-              }}
-            />
-            <div className="total">
-              <span>Total</span>
-              <span>${subtotal.toFixed(2)}</span>
-            </div>
+              <hr />
+              <div className="sub">
+                <span>Subtotal</span>
+                <span>${subtotal.toFixed(2)}</span>
+              </div>
+              <hr
+                style={{
+                  width: "90%",
+                  margin: "auto",
+                }}
+              />
+              <div className="total">
+                <span>Total</span>
+                <span>${subtotal.toFixed(2)}</span>
+              </div>
 
-            <hr style={{ width: "90%", margin: "auto" }} />
-            <div className="btn">
-            <button>PROCCED TO CHECKOUT</button>
-            </div>
+              <hr style={{ width: "90%", margin: "auto" }} />
+              <div className="btn">
+                <button>
+                  <Link
+                    to="/checkout"
+                    style={{ textDecoration: "none", color: "white" }}
+                  >
+                    PROCCED TO CHECKOUT
+                  </Link>
+                </button>
+              </div>
             </div>
           </div>
         </div>

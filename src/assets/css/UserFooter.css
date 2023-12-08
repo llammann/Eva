@@ -23,6 +23,10 @@
 .footer .bigcontainer ul li {
   padding-right: 12px;
   font-weight: inherit;
+  text-decoration: none;
+}
+.footer .bigcontainer ul li Link {
+  text-decoration: none;
 }
 .footer .bigcontainer h1 {
   font-size: 25px;
