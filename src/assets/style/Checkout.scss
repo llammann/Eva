@@ -1,10 +1,10 @@
 .checkout {
   width: 100%;
-  padding: 7em 0 0 0;
+  padding: 3em 0 0 0;
   .container {
     padding: 5em 0 0 0;
     max-width: 80%;
-    width: 1160px;
+    // width: 1160px;
     margin: auto;
 
     .main {
@@ -15,75 +15,145 @@
         .click {
           background-color: #f7f6f7;
           height: 50px;
+          /* text-align: right; */
+          display: flex;
+          align-items: center;
         }
       }
       .leftRight {
         display: flex;
+        .bil {
+          margin-top: 30px;
+          h4 {
+            margin-top: 60px;
+          }
+        }
+        hr {
+          border: 1 solid rgb(97, 92, 92);
+        }
         .left {
           width: 60%;
+          .tables {
+            .names {
+              display: flex;
+              gap: 50px;
 
-          .names {
-            display: flex;
-            line-height: 2;
-            font-weight: 700;
-            font-size: 0.9rem;
-            gap: 50px;
-            input {
-              height: 45px;
-              width: 310px;
+              input {
+                height: 45px;
+                width: 310px;
+                border: 0.8px solid;
+                color: #3d3b3b;
+              }
             }
-          }
-          .com {
-            input {
-              height: 45px;
-              width: 672px;
+            .com {
+              input {
+                height: 45px;
+                width: 672px;
+                border: 0.8px solid;
+                color: #3d3b3b;
+              }
             }
-          }
-          .country {
-            input {
-              height: 45px;
-              width: 672px;
+            .country {
+              input {
+                height: 45px;
+                width: 672px;
+                border: 0.8px solid;
+                color: #3d3b3b;
+              }
             }
-          }
-          .street {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
+            .street {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 10px;
 
-            input {
-              height: 45px;
-              width: 672px;
+              input {
+                height: 45px;
+                width: 672px;
+                border: 0.8px solid;
+                color: #3d3b3b;
+              }
             }
-          }
-          .town {
-            input {
-              height: 45px;
-              width: 672px;
+            .town {
+              input {
+                height: 45px;
+                width: 672px;
+                border: 0.8px solid;
+                color: #3d3b3b;
+              }
             }
-          }
-          .state {
-            input {
-              height: 45px;
-              width: 672px;
+            .state {
+              input {
+                height: 45px;
+                width: 672px;
+                border: 0.8px solid;
+                color: #3d3b3b;
+              }
             }
-          }
-          .phone {
-            input {
-              height: 45px;
-              width: 672px;
+            .phone {
+              input {
+                height: 45px;
+                width: 672px;
+                border: 0.8px solid;
+                color: #3d3b3b;
+              }
             }
-          }
-          .email {
-            input {
-              height: 45px;
-              width: 672px;
+            .email {
+              input {
+                height: 45px;
+                width: 672px;
+                border: 0.8px solid;
+                color: #3d3b3b;
+              }
+            }
+            .addition {
+              .order {
+                input {
+                  width: 97%;
+                  height: 40px;
+                  border: 0.8px solid;
+                  color: #3d3b3b;
+                }
+              }
             }
           }
         }
         .rightInp {
-          width: 40%;
+          height: 450px;
+
           border: 1px solid #d9d9d9;
-          margin-top: 20px;
+          margin-top: 30px;
+          width: 40%;
+          float: right;
+          margin-right: 0;
+          clear: right;
+          .mains {
+            padding: 30px;
+            h5 {
+              p {
+                font-size: 22px;
+              }
+            }
+            .table {
+              display: flex;
+              flex-direction: column;
+              table {
+                width: 100%;
+                tr {
+                  width: 100%;
+                  padding: 30px 0;
+                }
+              }
+            }
+            .text {
+              border: 0.8px solid gray;
+              width: 100%;
+              height: 90px;
+            }
+
+            button {
+              width: 100%;
+            }
+          }
         }
       }
     }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
+import axios from "axios";
 import {
   MDBCol,
   MDBContainer,
@@ -12,25 +13,39 @@ import {
 export default function ProfilePage() {
   const [editMode, setEditMode] = useState(false);
   const [editedUserData, setEditedUserData] = useState({});
+  const [initialUserData, setInitialUserData] = useState({});
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("user"));
     setEditedUserData(user || {});
-  }, []); //! Component ilk yuklenen anda ise dusur
+    setInitialUserData(user || {});
+  }, []); // Component ilk yuklenen anda istifadeye verilir
 
   const handleEditClick = () => {
     setEditMode(true);
   };
 
   const handleSaveClick = () => {
-    localStorage.setItem("user", JSON.stringify(editedUserData));
+    axios
+      .put(`http://localhost:3000/users/${initialUserData.id}`, editedUserData)
+      .then((response) => {
+        console.log("Değişiklikler başarıyla kaydedildi.");
+        setInitialUserData({ ...editedUserData });
+        localStorage.setItem(
+          "user",
+          JSON.stringify({ ...editedUserData, id: initialUserData.id })
+        );
+      })
+      .catch((error) => {
+        console.error("Değişiklikleri kaydetme hatası:", error);
+      });
+
     setEditMode(false);
   };
 
   const handleCancelClick = () => {
     setEditMode(false);
-    const user = JSON.parse(localStorage.getItem("user"));
-    setEditedUserData(user || {});
+    setEditedUserData({ ...initialUserData });
   };
 
   return (
@@ -39,6 +54,7 @@ export default function ProfilePage() {
         backgroundColor: "#BAEB9D",
         padding: "150px",
         paddingLeft: "950px",
+        width: "100%",
       }}
     >
       <MDBContainer className="py-5">
@@ -47,7 +63,7 @@ export default function ProfilePage() {
             <MDBCard className="mb-4">
               <MDBCardBody className="text-center">
                 <MDBCardImage
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHhur65zteqNln0VtF8gvGHyvrGV0MeuYGfo2b_0Us6thlH3Uthl9QZJa3Segk7SXO&usqp=CAU"
+                  src="https://i.etsystatic.com/28727146/r/il/730b67/2978574632/il_570xN.2978574632_9rhf.jpg"
                   alt="avatar"
                   className="rounded-circle"
                   style={{ width: "150px" }}
@@ -56,7 +72,7 @@ export default function ProfilePage() {
 
                 <p className="text-muted mb-1">
                   {!editMode ? (
-                    editedUserData.username
+                    initialUserData.username
                   ) : (
                     <input
                       type="text"
@@ -72,7 +88,7 @@ export default function ProfilePage() {
                 </p>
                 <p className="text-muted mb-4">
                   {!editMode ? (
-                    editedUserData.name
+                    initialUserData.name
                   ) : (
                     <input
                       type="text"
@@ -88,7 +104,7 @@ export default function ProfilePage() {
                 </p>
                 <p className="text-muted mb-4">
                   {!editMode ? (
-                    editedUserData.surname
+                    initialUserData.surname
                   ) : (
                     <input
                       type="text"
@@ -104,7 +120,7 @@ export default function ProfilePage() {
                 </p>
                 <p className="text-muted mb-4">
                   {!editMode ? (
-                    editedUserData.password
+                    initialUserData.password
                   ) : (
                     <input
                       type="text"
@@ -120,7 +136,7 @@ export default function ProfilePage() {
                 </p>
                 <p className="text-muted mb-4">
                   {!editMode ? (
-                    editedUserData.email
+                    initialUserData.email
                   ) : (
                     <input
                       type="text"
@@ -136,7 +152,7 @@ export default function ProfilePage() {
                 </p>
                 <p className="text-muted mb-4">
                   {!editMode ? (
-                    editedUserData.balance
+                    initialUserData.balance
                   ) : (
                     <input
                       type="text"

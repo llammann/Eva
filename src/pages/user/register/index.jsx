@@ -12,7 +12,7 @@ const Login = Yup.object().shape({
   password: Yup.string()
     .required("Please entered the Correct password!")
     .matches(
-      /^(?=.\d)(?=.[a-z])(?=.*[A-Z]).{8,}$/,
+      /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/,
       "Please entered the Correct password!"
     ),
   confirm_password: Yup.string()
@@ -72,7 +72,7 @@ function index() {
                       wishlist: [],
                       basket: [],
                       orders: [],
-                      balance: values.balance,
+                      balance: parseFloat(values.balance),
                     });
 
                     navigate("/login");
