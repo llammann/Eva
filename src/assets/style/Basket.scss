@@ -13,7 +13,8 @@
 
     .cartTable {
       width: 100%;
-
+box-sizing: border-box;
+padding: 10px;
       table {
         width: 1140px;
         height: 250px;
@@ -207,3 +208,23 @@
     }
   }
 }
+
+@media screen and (max-width: 590px) {
+  .firstTable {
+    .container {
+      width: 100% !important;
+      table {
+      width: 100% !important;
+      }
+      .buttons {
+        width: 100% !important;
+        }
+    }
+  }
+
+  .secondTable {
+    .container {
+      width: 100% !important;
+    }
+  }
+  }

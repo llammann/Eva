@@ -26,7 +26,7 @@ const items = [
   {
     key: "1",
     label: (
-      <a target="" rel="noopener noreferrer" href="/">
+      <a target="" rel="noopener noreferrer" href="/" style={{textDecoration:"none"}}>
         Home
       </a>
     ),
@@ -34,7 +34,7 @@ const items = [
   {
     key: "2",
     label: (
-      <a target="" rel="noopener noreferrer" href="/about">
+      <a target="" rel="noopener noreferrer" href="/about" style={{textDecoration:"none"}}>
         About
       </a>
     ),
@@ -42,7 +42,7 @@ const items = [
   {
     key: "3",
     label: (
-      <a target="" rel="noopener noreferrer" href="/contact">
+      <a target="" rel="noopener noreferrer" href="/contact" style={{textDecoration:"none"}}>
         Contact
       </a>
     ),
@@ -50,7 +50,7 @@ const items = [
   {
     key: "4",
     label: (
-      <a target="" rel="noopener noreferrer" href="/shop">
+      <a target="" rel="noopener noreferrer" href="/shop" style={{textDecoration:"none"}}>
         Shop
       </a>
     ),
@@ -58,7 +58,7 @@ const items = [
   {
     key: "5",
     label: (
-      <a target="" rel="noopener noreferrer" href="/wishlist">
+      <a target="" rel="noopener noreferrer" href="/wishlist" style={{textDecoration:"none"}}>
         Wishlist
       </a>
     ),
@@ -66,7 +66,7 @@ const items = [
   {
     key: "6",
     label: (
-      <a target="" rel="noopener noreferrer" href="/basket">
+      <a target="" rel="noopener noreferrer" href="/basket" style={{textDecoration:"none"}}>
         Basket
       </a>
     ),
@@ -74,7 +74,7 @@ const items = [
   {
     key: "7",
     label: (
-      <a target="" rel="noopener noreferrer" href="/login">
+      <a target="" rel="noopener noreferrer" href="/login" style={{textDecoration:"none"}}>
         Login
       </a>
     ),

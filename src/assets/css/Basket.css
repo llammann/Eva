@@ -13,6 +13,8 @@
 }
 .firstTable .container .cartTable {
   width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
 }
 .firstTable .container .cartTable table {
   width: 1140px;
@@ -177,4 +179,19 @@
   width: 200px;
   height: 50px;
   border: none;
+}
+
+@media screen and (max-width: 590px) {
+  .firstTable .container {
+    width: 100% !important;
+  }
+  .firstTable .container table {
+    width: 100% !important;
+  }
+  .firstTable .container .buttons {
+    width: 100% !important;
+  }
+  .secondTable .container {
+    width: 100% !important;
+  }
 }/*# sourceMappingURL=Basket.css.map */

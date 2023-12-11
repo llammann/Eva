@@ -301,8 +301,8 @@
   display: block;
 }
 .relatedProducts .container .imgWrapper {
-  width: 353px;
-  height: 353px;
+  width: 100%;
+  height: 100%;
   margin-bottom: 13.6px;
   position: relative;
 }
@@ -336,4 +336,50 @@
   margin: 0 0 0.5em 0;
   font-weight: 700;
   margin-bottom: 0.5em;
+}
+
+@media screen and (max-width: 910px) {
+  .details .container {
+    width: 100% !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 15px;
+  }
+  .details .container .imgWrapper {
+    width: 100%;
+    margin-top: 130px;
+    margin-bottom: 40px;
+  }
+  .details .container .description {
+    width: 100%;
+    padding: 0;
+  }
+  .relatedProducts .container {
+    width: 100% !important;
+  }
+  .relatedProducts .container .card1 {
+    margin-bottom: 30px;
+    width: 100% !important;
+  }
+}
+@media screen and (max-width: 332px) {
+  .details .container .description {
+    width: 100%;
+    padding: 0;
+  }
+  .details .container .description .buttons {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .details .container .description .buttons :nth-child(1) {
+    margin-bottom: 10px;
+  }
+  .details .container .description .buttons :nth-child(1) .minus {
+    margin: 0;
+    padding-bottom: 10px;
+  }
 }/*# sourceMappingURL=Detail.css.map */

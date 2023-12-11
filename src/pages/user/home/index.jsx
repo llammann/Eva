@@ -63,34 +63,33 @@ function Home() {
             <Grid container columns={{ xs: 4, md: 12 }} spacing={3}>
               {products.map((x) => (
                 <Grid item xs={4} key={x.id}>
-                     <Link to={"/shop/" + x.id}>
+                  <Link to={"/shop/" + x.id}>
+                    <div className="card1">
+                      <div className="imgWrapper">
+                        <button onClick={() => handleBuy(x)}>
+                          <FontAwesomeIcon
+                            icon={faBagShopping}
+                            style={{ color: "#2C541D", fontSize: "15px" }}
+                          />
+                        </button>
 
-                  <div className="card1">
-                    <div className="imgWrapper">
-                      <button onClick={() => handleBuy(x)}>
-                        <FontAwesomeIcon
-                          icon={faBagShopping}
-                          style={{ color: "#2C541D", fontSize: "15px" }}
-                        />
-                      </button>
+                        <button onClick={() => handleWish(x)} className="heart">
+                          {MyWishlist &&
+                          MyWishlist.find((wish) => wish.id === x.id) ? (
+                            <HeartFilled />
+                          ) : (
+                            <HeartOutlined />
+                          )}
+                        </button>
 
-                      <button onClick={() => handleWish(x)} className="heart">
-                        {MyWishlist &&
-                        MyWishlist.find((wish) => wish.id === x.id) ? (
-                          <HeartFilled />
-                        ) : (
-                          <HeartOutlined />
-                        )}
-                      </button>
-
-                      <img src={x.image} alt="" />
+                        <img src={x.image} alt="" />
+                      </div>
+                      <div className="article">
+                        <h6 className="category">{x.category}</h6>
+                        <h4 className="name">{x.name}</h4>
+                        <h5 className="price">${x.price}</h5>
+                      </div>
                     </div>
-                    <div className="article">
-                      <h6 className="category">{x.category}</h6>
-                      <h4 className="name">{x.name}</h4>
-                      <h5 className="price">${x.price}</h5>
-                    </div>
-                  </div>
                   </Link>
                 </Grid>
               ))}
@@ -108,25 +107,27 @@ function Home() {
           <Box sx={{ flexGrow: 1 }}>
             <Grid container columns={{ xs: 4, md: 12 }} spacing={9}>
               <Grid item xs={4}>
-                  <div className="box">
-                    <FontAwesomeIcon
-                      icon={faQuoteLeft}
-                      size={"2x"}
-                      style={{ color: "#2C541D" }}
+                <div className="box">
+                  <FontAwesomeIcon
+                    icon={faQuoteLeft}
+                    size={"2x"}
+                    style={{ color: "#2C541D" }}
+                  />
+                  <p>
+                    Fast shipping and excellent customer service. The product
+                    was even better than expected. I will definitely be a
+                    returning customer.
+                  </p>
+                 <div>
+                 <div className="imgWrapper">
+                    <img
+                      src="https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2022/11/earth-store-testimonial-avatar-img.jpeg"
+                      alt=""
                     />
-                    <p>
-                      Fast shipping and excellent customer service. The product
-                      was even better than expected. I will definitely be a
-                      returning customer.
-                    </p>
-                    <div className="imgWrapper">
-                      <img
-                        src="https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2022/11/earth-store-testimonial-avatar-img.jpeg"
-                        alt=""
-                      />
-                    </div>
-                    <span>JENNIFER LEWIS</span>
                   </div>
+                  <span>JENNIFER LEWIS</span>
+                 </div>
+                </div>
               </Grid>
               <Grid item xs={4}>
                 <div className="box">
@@ -140,6 +141,7 @@ function Home() {
                     I was looking for at a great price. I will definitely be
                     telling my friends.
                   </p>
+                  <div>
                   <div className="imgWrapper">
                     <img
                       src="https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2022/11/earth-store-testimonials-avatar-img-2.jpeg"
@@ -147,6 +149,7 @@ function Home() {
                     />
                   </div>
                   <span>ALICIA HEART</span>
+                  </div>
                 </div>
               </Grid>
               <Grid item xs={4}>
@@ -161,6 +164,7 @@ function Home() {
                     quickly and was exactly as described. I will definitely be
                     shopping with you again in the future.
                   </p>
+                  <div>
                   <div className="imgWrapper">
                     <img
                       src="https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2022/11/earth-store-testimonials-avatar-img-1.jpeg"
@@ -168,6 +172,7 @@ function Home() {
                     />
                   </div>
                   <span>JUAN CARLOS</span>
+                  </div>
                 </div>
               </Grid>
             </Grid>
